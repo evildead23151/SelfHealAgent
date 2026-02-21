@@ -1,0 +1,28 @@
+# render.yaml — Render Blueprint for Voltix Mechanic Agent
+#
+# Deploy: connect your repo to Render, and it will auto-detect this file.
+# Or manually create a Web Service and point it to this config.
+
+services:
+  - type: web
+    name: voltix-mechanic-agent
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: VOLTIX_API_KEY
+        value: mykey
+      - key: VOLTIX_DEMO_MODE
+        value: "true"
+      - key: VOLTIX_LOG_LEVEL
+        value: INFO
+      - key: ARMORIQ_API_KEY
+        value: ""
+        # Leave empty for local simulation mode
+        # Set to your ArmorIQ API key for production mode
+      - key: ARMORIQ_USER_ID
+        value: voltix-agent-user
+      - key: ARMORIQ_AGENT_ID
+        value: voltix-mechanic-agent

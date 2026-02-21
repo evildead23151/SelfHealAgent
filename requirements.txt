@@ -1,0 +1,7 @@
+# Voltix Mechanic Agent – Python dependencies
+
+# ArmorIQ SDK for cryptographic intent verification
+armoriq-sdk>=0.2.6
+
+# WINDOWS ONLY — needed for real WiFi radio toggle (not needed on Render/cloud):
+# pip install winrt-runtime "winrt-Windows.Devices.Radios"
